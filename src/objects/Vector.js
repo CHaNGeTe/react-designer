@@ -32,7 +32,7 @@ export default class Vector extends Component {
   }
 
   getObjectAttributes() {
-    let {object, onRender, ...rest} = this.props;
+    let {object, onRender, blendMode, ...rest} = this.props;
     return {
       ...object,
       transform: this.getTransformMatrix(object),
