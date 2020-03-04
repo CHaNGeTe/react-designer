@@ -384,6 +384,7 @@ class Designer extends Component {
          background={background}
          width={width}
          canvas={canvas}
+         svgStyle={svgStyle}
          height={height}
          objects={objects}
          onMouseOver={this.showHandler.bind(this)}
