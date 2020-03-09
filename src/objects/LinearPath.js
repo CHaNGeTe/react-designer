@@ -18,7 +18,7 @@ export default class LinearPath extends Vector {
       stroke: "gray",
       strokeWidth: 1
     },
-    mode: modes.DRAW_PATH,
+    mode: modes.DRAW_LINEARPATH,
     icon: <Icon icon={'polygon'} size={30} />,
     editor: LinearEditor
   };
