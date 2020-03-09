@@ -70,7 +70,6 @@ class LinearEditor extends Component {
 
   onMouseMove(event) {
     let {mode} = this.state;
-    console.log(mode);
     let currentPath = this.getCurrentPath();
     let mouse = this.getMouseCoords(event);
     let {object} = this.props;
@@ -100,10 +99,6 @@ class LinearEditor extends Component {
         x: x,
         y: y
       })
-    }
-
-    if (mode === 'connect') {
-      this.updateCurrentPath({x, y})
     }
 
     if (mode === 'target' || mode === 'connect') {
@@ -148,8 +143,6 @@ class LinearEditor extends Component {
 
     let {mode} = this.state;
 
-    console.log(mode);
-
     if (mode === 'target') {
       this.setState({
         mode: 'connect'
@@ -163,7 +156,6 @@ class LinearEditor extends Component {
     let {path} = this.props.object;
     let mouse = this.getMouseCoords(event);
     let currentPath = this.getCurrentPath();
-    console.log(mode);
 
     if (this.state.closePath) {
       return this.closePath();
