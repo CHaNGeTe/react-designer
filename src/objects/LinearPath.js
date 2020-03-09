@@ -4,7 +4,7 @@ import Icon from '../Icon';
 import _ from 'lodash';
 
 import Vector from './Vector';
-import BezierEditor from '../editors/BezierEditor';
+import LinearEditor from '../editors/LinearEditor';
 
 export default class LinearPath extends Vector {
   static meta = {
@@ -20,7 +20,7 @@ export default class LinearPath extends Vector {
     },
     mode: modes.DRAW_PATH,
     icon: <Icon icon={'polygon'} size={30} />,
-    editor: BezierEditor
+    editor: LinearEditor
   };
 
   buildPath(object) {
