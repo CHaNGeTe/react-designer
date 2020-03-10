@@ -506,6 +506,7 @@ class Designer extends Component {
       objectTypes,
       insertMenu: InsertMenuComponent,
       alwaysOpened,
+      showMenuTop,
     } = this.props;
 
     let currentObject = objects[selectedObjectIndex],
@@ -529,6 +530,13 @@ class Designer extends Component {
         keyMap={this.keyMap}
         style={styles.keyboardManager}
         handlers={this.getKeymapHandlers()}>
+        {/* Top Panel: Displays insertion tools (shapes, images, etc.) */}
+        {showMenuTop && InsertMenuComponent && (
+          <InsertMenuComponent tools={objectTypes}
+            alwaysOpened={alwaysOpened}
+            currentTool={selectedTool}
+            onSelect={this.selectTool.bind(this)} />
+        )}
         <div className={'container'}
              style={{
                 ...styles.container,
@@ -539,7 +547,7 @@ class Designer extends Component {
              onMouseUp={this.stopDrag.bind(this)}>
 
           {/* Left Panel: Displays insertion tools (shapes, images, etc.) */}
-          {InsertMenuComponent && (
+          {!showMenuTop && InsertMenuComponent && (
             <InsertMenuComponent tools={objectTypes}
               alwaysOpened={alwaysOpened}
               currentTool={selectedTool}
