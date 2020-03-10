@@ -38,8 +38,8 @@ class InsertMenu extends Component {
 
     return (
       <div style={{
-          ...styles.insertMenu,
-          ...menuOpened ? styles.insertMenuHover : {}
+          ...(showMenuTop ? styles.insertMenuHorizontal : styles.insertMenu),
+          ...menuOpened ? (showMenuTop ? styles.insertMenuHoverHorizontal : styles.insertMenuHover) : {}
         }}
         onMouseOver={this.openMenu}
         onMouseOut={this.closeMenu}
@@ -75,9 +75,18 @@ const styles = {
     width: 40,
     overflow: 'hidden',
   },
+  insertMenuHorizontal: {
+    height: 40,
+    width: 40,
+    overflow: 'hidden',
+  },
   insertMenuHover: {
     background: '#eeeff5',
     height: 'auto',
+  },
+  insertMenuHoverHorizontal: {
+    background: '#eeeff5',
+    width: 'auto',
   },
   toolBox: {
     margin: 0,
