@@ -147,9 +147,9 @@ class Designer extends Component {
 
     this.setState({
       currentObjectIndex: objects.length,
-      selectedObjectIndex: keepSelectedTool ? null : objects.length,
+      selectedObjectIndex: objects.length,
       startPoint: this.getStartPointBundle(event, object),
-      mode: keepSelectedTool ? this.state.mode : meta.editor ? modes.EDIT_OBJECT : modes.SCALE,
+      mode: meta.editor ? modes.EDIT_OBJECT : modes.SCALE,
       selectedTool: keepSelectedTool ? this.state.selectedTool : null
     });
 
