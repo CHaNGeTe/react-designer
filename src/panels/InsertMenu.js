@@ -49,7 +49,7 @@ class InsertMenu extends Component {
           ? tools[currentTool].meta.icon
           : <Icon icon={"add"} size={30} />}
         </div>)}
-        <ul style={showMenuTop ? styles.toolBox : styles.toolBoxHorizontal}>
+        <ul style={showMenuTop ? styles.toolBoxHorizontal : styles.toolBox}>
           {keys.map((type, i) => (
             <li style={{
                   ...styles.toolBoxItem,
