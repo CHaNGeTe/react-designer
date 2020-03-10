@@ -32,7 +32,7 @@ class InsertMenu extends Component {
   }
 
   render() {
-    let {currentTool, tools} = this.props;
+    let {currentTool, tools, showMenuTop} = this.props;
     let {menuOpened, hoveredTool} = this.state;
     let keys = Object.keys(tools);
 
@@ -44,12 +44,12 @@ class InsertMenu extends Component {
         onMouseOver={this.openMenu}
         onMouseOut={this.closeMenu}
       >
-        <div style={styles.mainIcon}>
+        {this.props.alwaysOpened ? null : (<div style={styles.mainIcon}>
         {currentTool
           ? tools[currentTool].meta.icon
           : <Icon icon={"add"} size={30} />}
-        </div>
-        <ul style={styles.toolBox}>
+        </div>)}
+        <ul style={showMenuTop ? styles.toolBox : styles.toolBoxHorizontal}>
           {keys.map((type, i) => (
             <li style={{
                   ...styles.toolBoxItem,
@@ -82,6 +82,12 @@ const styles = {
   toolBox: {
     margin: 0,
     padding: 0,
+  },
+  toolBoxHorizontal: {
+    margin: 0,
+    padding: 0,
+    display: 'flex',
+    flexDirection: 'row'
   },
   toolBoxItem: {
     listStyle: "none",
