@@ -14,11 +14,11 @@ class InsertMenu extends Component {
   }
 
   openMenu = () => {
-    this.setState({menuOpened: alwaysOpened || true})
+    this.setState({menuOpened: this.props.alwaysOpened || true})
   }
 
   closeMenu = () => {
-    this.setState({menuOpened: alwaysOpened || false})
+    this.setState({menuOpened: this.props.alwaysOpened || false})
   }
 
   hoverTool = type => {
