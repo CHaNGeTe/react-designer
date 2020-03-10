@@ -504,7 +504,8 @@ class Designer extends Component {
     let {
       objects,
       objectTypes,
-      insertMenu: InsertMenuComponent
+      insertMenu: InsertMenuComponent,
+      alwaysOpened,
     } = this.props;
 
     let currentObject = objects[selectedObjectIndex],
@@ -540,6 +541,7 @@ class Designer extends Component {
           {/* Left Panel: Displays insertion tools (shapes, images, etc.) */}
           {InsertMenuComponent && (
             <InsertMenuComponent tools={objectTypes}
+              alwaysOpened={alwaysOpened}
               currentTool={selectedTool}
               onSelect={this.selectTool.bind(this)} />
           )}
