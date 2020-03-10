@@ -57,7 +57,7 @@ export default class StylePanel extends Component {
                      value={object.radius} />
             </Column>
           </Columns>
-          <Columns label="Blending">
+          <Columns showIf={_.has(object, 'blendMode')} label="Blending">
             <Column>
               <select style={styles.select}
                       value={object.blendMode}
