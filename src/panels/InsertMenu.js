@@ -8,17 +8,17 @@ class InsertMenu extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      menuOpened: false,
+      menuOpened: props.alwaysOpened,
       hoveredTool: null
     }
   }
 
   openMenu = () => {
-    this.setState({menuOpened: true})
+    this.setState({menuOpened: alwaysOpened || true})
   }
 
   closeMenu = () => {
-    this.setState({menuOpened: false})
+    this.setState({menuOpened: alwaysOpened || false})
   }
 
   hoverTool = type => {
