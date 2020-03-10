@@ -134,7 +134,7 @@ class Designer extends Component {
     let {meta} = this.getObjectComponent(selectedTool);
     let mouse = this.getMouseCoords(event);
 
-    let {objects, onUpdate} = this.props;
+    let {objects, onUpdate, keepSelectedTool} = this.props;
     let object = {
       ...meta.initial,
       type: selectedTool,
@@ -150,7 +150,7 @@ class Designer extends Component {
       selectedObjectIndex: objects.length,
       startPoint: this.getStartPointBundle(event, object),
       mode: meta.editor ? modes.EDIT_OBJECT : modes.SCALE,
-      selectedTool: null
+      selectedTool: keepSelectedTool ? this.state.selectedTool : null
     });
 
   }
