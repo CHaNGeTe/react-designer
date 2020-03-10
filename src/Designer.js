@@ -534,6 +534,7 @@ class Designer extends Component {
         {showMenuTop && InsertMenuComponent && (
           <InsertMenuComponent tools={objectTypes}
             alwaysOpened={alwaysOpened}
+            showMenuTop={showMenuTop}
             currentTool={selectedTool}
             onSelect={this.selectTool.bind(this)} />
         )}
