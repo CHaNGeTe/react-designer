@@ -585,6 +585,17 @@ class Designer extends Component {
           {showPropertyPanel && (
             <PanelList
               id={this.props.id}
+              position="right"
+              object={objectWithInitial}
+              onArrange={this.handleArrange.bind(this)}
+              onChange={this.handleObjectChange.bind(this)}
+              objectComponent={objectComponent} />
+          )}
+          {/* Bottom Panel: Displays text, styling and sizing tools */}
+          {showPropertyPanel && (
+            <PanelList
+              id={this.props.id}
+              position="bottom"
               object={objectWithInitial}
               onArrange={this.handleArrange.bind(this)}
               onChange={this.handleObjectChange.bind(this)}

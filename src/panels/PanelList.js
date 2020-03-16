@@ -13,11 +13,18 @@ import Column from './Column';
 
 class PanelList extends Component {
   render() {
-    let {object, objectComponent, id} = this.props;
+    let {object, objectComponent, id, position} = this.props;
 
     return (
-      <div style={{...styles.propertyPanel}}>
-        {objectComponent.panels.map((Panel, i) => <Panel key={i} id={id} {...this.props} />)}
+      <div style={{...styles.propertyPanel, ...(position === 'bottom' ? {
+        width: '100%',
+        clear: "both",
+      } : {})}}>
+        {objectComponent.panels.map((Panel, i) => {
+          return Panel.position === position ? (
+            <Panel key={i} id={id} {...this.props} />
+          ) : null;
+        })}
       </div>
     );
   }
