@@ -45,6 +45,7 @@ export default class LinearPath extends Vector {
   }
 
   getTransformMatrix({rotate, x, y, moveX, moveY}) {
+    rotate = rotate || 0;
     return `
       translate(${x - moveX} ${y - moveY})
       rotate(${rotate} ${x} ${y})
