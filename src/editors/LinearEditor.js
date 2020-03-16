@@ -258,9 +258,7 @@ class LinearEditor extends Component {
     let offsetX = x - moveX,
         offsetY = y - moveY;
 
-    if (!object.rotate) {
-      object.rotate = 0;
-    }
+    const rotate = object.rotate || 0;
 
     return (
       <div style={styles.canvas}
@@ -268,7 +266,7 @@ class LinearEditor extends Component {
            onMouseMove={this.onMouseMove.bind(this)}
            onMouseDown={this.onMouseDown.bind(this)}>
         <svg style={{width, height}}>
-          <g transform={`translate(${offsetX} ${offsetY}) rotate(${object.rotate} ${object.x} ${object.y})`}>
+          <g transform={`translate(${offsetX} ${offsetY}) rotate(${rotate} ${object.x} ${object.y})`}>
             {object.path.map(({x1, y1, x2, y2, x, y}, i) => (
               <g key={i}>
                 {x2 && y2 && (
