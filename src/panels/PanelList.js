@@ -21,7 +21,7 @@ class PanelList extends Component {
         clear: "both",
       } : {})}}>
         {objectComponent.panels.map((Panel, i) => {
-          return Panel.position === position ? (
+          return !Panel.position || Panel.position === position ? (
             <Panel key={i} id={id} {...this.props} />
           ) : null;
         })}
